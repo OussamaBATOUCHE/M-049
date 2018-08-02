@@ -1,0 +1,66 @@
+<div class="signup-container">
+  <form #signupForm="ngForm" class="col-xs-12" (ngSubmit)="onSubmit(signupForm)">
+    <div class="form-group col-xs-12">
+        <input type="email"
+             placeholder="email" [(ngModel)]="piligrimUser.email"
+            class="form-control" #email="ngModel" name="email" id="email" email required>
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+          <p>Username is required</p>
+        </div>        
+    </div>
+    <div class="form-group col-xs-12">
+      <input type="text" 
+           placeholder="Mobile Number" #mobileNumber="ngModel" [(ngModel)]="piligrimUser.mobileNumber"
+          class="form-control" name="mobileNumber" id="mobileNumber" required>  
+          <div [hidden]="mobileNumber.valid || mobileNumber.pristine" class="alert alert-danger">
+            <p>Mobile Number is required</p>
+          </div>           
+    </div>
+    <div class="form-group col-xs-12">
+      <input type="text" 
+           placeholder="PassportID/NationalID"
+          class="form-control" name="piligrimId" id="piligrimId" required>  
+    </div>
+    <div class="form-group col-xs-12">
+      <!-- <input type="text" 
+           placeholder="Country" #country="ngModel" [(ngModel)]="piligrimUser.country"
+          class="form-control" name="country" id="country" required>  
+          <div [hidden]="country.valid || country.pristine" class="alert alert-danger">
+            <p>Country is required</p>
+          </div>            -->
+          <select name="country" id="country" #country="ngModel" [(ngModel)]="piligrimUser.country" required class="form-control">
+            <option value="" disabled selected>Country</option>
+            <option value="966">Saudi Arabia</option>
+            <option value="213">Algeria</option>
+          </select>
+          <div [hidden]="country.valid || country.pristine" class="alert alert-danger">
+              <p>Country is required</p>
+          </div> 
+    </div>
+    <div class="form-group col-xs-12">
+      <input type="text" 
+           placeholder="Full Name" #fullName="ngModel" [(ngModel)]="piligrimUser.fullName"
+          class="form-control" name="full-name" id="full-name" required>  
+          <div [hidden]="fullName.valid || fullName.pristine" class="alert alert-danger">
+            <p>Full Name is required</p>
+          </div>           
+    </div>
+    <div class="form-group col-xs-12">
+      <label>Sex</label><br>
+      <label class="radio-inline"><input type="radio" name="sexopt" value="male" [(ngModel)]="piligrimUser.sex">Male</label>
+      <label class="radio-inline"><input type="radio" name="sexopt" value="female" [(ngModel)]="piligrimUser.sex">Female</label>
+    </div>
+    <div class="form-group col-xs-12">
+      <input type="text" 
+           placeholder="Language" #language="ngModel" [(ngModel)]="piligrimUser.language"
+          class="form-control" name="language" id="language" required>  
+          <div [hidden]="language.valid || language.pristine" class="alert alert-danger">
+            <p>language is required</p>
+          </div>           
+    </div>
+    <div class="form-group col-xs-12">
+      <button type="submit" class="btn btn-primary" style="width: 100%;" [disabled]="!signupForm.form.valid">Signup</button>      
+    </div>
+  </form>
+
+</div>
