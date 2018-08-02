@@ -95,7 +95,6 @@
         </style>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2g5ixHpW2l8FA8H-X6ouaUV4Xk_YneM8&callback=initMap&libraries=places"
           type="text/javascript">
-          console.log('hello')
         </script>
     </head>
     <body>
@@ -113,16 +112,17 @@
                 <h2>You are : <p id="user_id"></p> </h2>
                 <input id="map-search" type="text" name="" value="" size="50" required>
                 <div id="map"></div>
-                <select class="form-control" name="risk_level" style="font-size:25px;" required>
-                  <option value="">Risk Level</option>
-                  <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                  <option value="">4</option>
-                  <option value="">5</option>
+                <select id="risk_level" class="form-control" name="risk_level" style="font-size:25px;" required>
+                  <option value="" disabled selected>Risk Level</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
                 </select>
                 <br>
                 <button id="SOS" onclick="sos()">S.O.S</button>
+                <button id="SOS" onclick="readSos()">read data</button>
                 <script>
                 var map, infoWindow,marker;
                 function initMap() {
@@ -162,7 +162,7 @@
                     var places = searchBox.getPlaces();
                     var bounds = new google.maps.LatLngBounds();
                     var i,p;
-                    console.log("hello"+places[0].geometry.location);
+                    console.log("-- "+places[0].geometry.location);
                     bounds.extend(places[0].geometry.location);
                     marker.setPosition(places[0].geometry.location);
                     map.fitBounds(bounds);
@@ -179,9 +179,32 @@
 
 
                 function sos(){
-                  var piligrim = addPiligrim( "ALG-169696550 - - TEST" , "/" , "BATOUCHE-Oussama" , "Male" , "ossama12batouhe@gmail.com" , "ALGERIA" , "Arabic" , "+213553839577")
-                  addSOS( piligrim , 12 , 34 , 5 )
+                  var piligrim = addPiligrim( "ALG-169692345 - - TEST - 2" , "/" , "BATOUCHE-Oussama" , "Male" , "ossama12batouhe@gmail.com" , "ALGERIA" , "Arabic" , "+213553839577" , 67)
+                  var lat = marker.getPosition().lat();
+                  var lng = marker.getPosition().lng();
+                  addSOS( piligrim , lat , lng , document.getElementById('risk_level').options[document.getElementById('risk_level').selectedIndex].value )
                 }
+
+
+
+                function readSOS(){
+                  console.log("_>");
+                  var t=0;
+                  var dbRefObject = firebase.database().ref('sos/').orderByChild("okOrNot").equalTo(0);
+                  dbRefObject.on('value', function(snapshot) {
+                  snapshot.forEach(function(childSnapshot) {
+                    //var childKey = childSnapshot.key;
+                    //var childData = snapshot.val().title;
+                  //  console.log("---- "+childSnapshot.val().risq_level);
+                    t++;
+                  console.log(t);
+                    console.log(childSnapshot.val().risq_level);
+                    //li.id  = snap.key
+                  });
+                });
+                console.log(t);
+                }
+
 
 
               </script>

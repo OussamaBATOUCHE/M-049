@@ -5,7 +5,7 @@ function newKey(docs){
 
 
  // add a new post
-function addPiligrim( passportID , nationalID , fullName , sex , email , country , language , mobileNumber) {
+function addPiligrim( passportID , nationalID , fullName , sex , email , country , language , mobileNumber ,age) {
   Id = newKey('piligrim_user');
   firebase.database().ref('piligrim_user/' + Id).set({
     passportID : passportID ,
@@ -15,7 +15,8 @@ function addPiligrim( passportID , nationalID , fullName , sex , email , country
     email : email ,
     country : country ,
     language : language ,
-    mobileNumber : mobileNumber
+    mobileNumber : mobileNumber,
+    age : age
   });
   console.log('piligrim Created !');
   return Id;

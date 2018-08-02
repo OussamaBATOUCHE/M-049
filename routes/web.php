@@ -11,6 +11,23 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('dashboard',function () {
+    return view('dashboard');
+});
+
+Route::get('/location', function () {
+    return view('location');
+});
+
+Route::get('/moreInfo', function () {
+    return view('moreInfo');
 });
