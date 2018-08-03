@@ -100,7 +100,7 @@
               font-size: 15px;
              }
         </style>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2g5ixHpW2l8FA8H-X6ouaUV4Xk_YneM8&callback=initMap&libraries=places"
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx-oYcQZJNuHtOAmCCZGMsPr5g575YRFY&callback=initMap&libraries=places"
           type="text/javascript">
         </script>
     </head>
@@ -191,7 +191,7 @@
 
 
             function sos(){
-              var piligrim = addPiligrim( "ALG-169692345 - - TEST - 2" , "/" , "BATOUCHE-Oussama" , "Male" , "ossama12batouhe@gmail.com" , "ALGERIA" , "Arabic" , "+213553839577" , 67)
+              var piligrim = addPiligrim( "OMN-169692345 - - TEST - 2" , "/" , "SELMAN - GHAMIDI" , "Male" , "ossama12batouhe@gmail.com" , "OMAN" , "Arabic" , "+213553839577" , 23)
               var lat = marker.getPosition().lat();
               var lng = marker.getPosition().lng();
               addSOS( piligrim , lat , lng , document.getElementById('risk_level').options[document.getElementById('risk_level').selectedIndex].value )
