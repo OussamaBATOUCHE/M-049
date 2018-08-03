@@ -72,7 +72,7 @@
             plgrmAge = snapshot.val() && snapshot.val().age ;
             var lat = childSnapshot.val().lat;
             var long = childSnapshot.val().long;
-            cntnt = cntnt.concat(`<a href="#" class="list-group-item list-group-item-action" onClick="details('`+plgrmName+`',`+plgrmAge+`,`+lat+`,`+long+`)" data-dismiss="modal"data-toggle="modal"
+            cntnt = cntnt.concat(`<a href="#" class="list-group-item list-group-item-action" onClick="details('`+plgrmName+`',`+plgrmAge+`,`+lat+`,`+long+`)" data-dismiss="modal" data-toggle="modal"
             data-target="#exampleModal">`);
             cntnt = cntnt.concat(plgrmName+`  |  `+plgrmAge+` Y-A | <span class="badge badge-danger">Details</span></a>`);
 

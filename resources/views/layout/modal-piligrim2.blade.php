@@ -21,43 +21,25 @@
         <div class="modal-body">
           <div class="flex-container">
             <div class="col-xs-12 col-sm-8 info-block" >
-                <h1>Name: <small id="name-p">Maximilan</small></h1>
-                <h1>Age: <small id="age-p">25</small></h1>
-                <h1>Sex: <small>m</small></h1>
-                <h1>Country: <small>Italy</small></h1>
-                <h1>Language: <small>Italian</small></h1>
-                <h1>Immunizations:
+                <h3>Name: <small id="name-p">Maximilan</small></h3>
+                <h3>Age: <small id="age-p">25</small></h3>
+                <h3>Country: <small>Italy</small></h3>
+                <h3>Language: <small>Italian</small></h3>
+                <h3>Immunizations:
                     <small>Airbones</small>
                     <small>Respiratory</small>
                     <small>Flu</small>
                     <small>Malaria</small>
-                </h1>
-                <h1>NatioanlID/PassportID: <small>P-28456</small></h1>
-                <h1>Mobile Number: <small>+827 685 85 555 85</small></h1>
+                </h3>
+                <h3>NatioanlID/PassportID: <small>P-28456</small></h3>
+                <h3>Mobile Number: <small>+827 685 85 555 85</small></h3>
             </div>
             <div class="col-xs-12 col-sm-4 profile-pic">
                 <img src="LTE/dist/img/user2-160x160.jpg" alt="">
             </div>
           </div>
           <div class="map-block top-mar-1">
-            <div id="map"></div>
-          </div>
-          <div class="row condition-block top-mar-1">
-              <h1>Conditions:</h1>
-              <div class="form-group">
-                    <a href="#" class="list-group-item list-group-item-action">
-                     Flu 1
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      Flu 2
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                       Flu 3
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        Flu 4
-                     </a>
-              </div>
+            <div id="map-2"></div>
           </div>
         <div class=""></div>
         </div>
