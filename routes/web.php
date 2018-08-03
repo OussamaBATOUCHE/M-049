@@ -13,11 +13,15 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/login', function () {
     return view('login');
+});
+
+Route::get('/mobile',function(){
+  return view('welcome');
 });
 
 Route::get('dashboard',function () {
